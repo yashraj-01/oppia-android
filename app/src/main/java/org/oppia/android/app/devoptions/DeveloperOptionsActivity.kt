@@ -6,7 +6,7 @@ import android.os.Bundle
 import javax.inject.Inject
 import org.oppia.android.app.activity.InjectableAppCompatActivity
 
-class DeveloperOptionsActivity: InjectableAppCompatActivity() {
+class DeveloperOptionsActivity : InjectableAppCompatActivity() {
   @Inject
   lateinit var developerOptionsActivityPresenter: DeveloperOptionsActivityPresenter
   private var internalProfileId = -1

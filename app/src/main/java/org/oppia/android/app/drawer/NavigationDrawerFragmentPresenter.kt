@@ -15,7 +15,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.Transformations
 import com.google.android.material.navigation.NavigationView
-import java.util.*
+import java.util.Optional
+import javax.inject.Inject
 import org.oppia.android.R
 import org.oppia.android.app.administratorcontrols.AdministratorControlsActivity
 import org.oppia.android.app.fragment.FragmentScope
@@ -40,7 +41,6 @@ import org.oppia.android.domain.topic.TopicController
 import org.oppia.android.util.data.AsyncResult
 import org.oppia.android.util.data.DataProviders.Companion.toLiveData
 import org.oppia.android.util.statusbar.StatusBarColor
-import javax.inject.Inject
 
 const val KEY_NAVIGATION_PROFILE_ID = "KEY_NAVIGATION_PROFILE_ID"
 const val TAG_SWITCH_PROFILE_DIALOG = "SWITCH_PROFILE_DIALOG"
@@ -465,7 +465,7 @@ class NavigationDrawerFragmentPresenter @Inject constructor(
       if (previousMenuItemId != NavigationDrawerItem.HOME.ordinal) {
         fragment.activity!!.finish()
       }
-    } else if (menuItemId == 0){
+    } else if (menuItemId == 0) {
       // For showing navigation drawer in AdministratorControlsActivity
       getFooterViewModel().isAdministratorControlsSelected.set(true)
       uncheckAllMenuItemsWhenAdministratorControlsIsSelected()
